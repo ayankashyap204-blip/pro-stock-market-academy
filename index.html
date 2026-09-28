@@ -34,6 +34,9 @@
     .topbar { background: var(--navy); color: #dce8f1; font-size: 13px; }
     .topbar-inner { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .topbar a { color: #fff; }
+    .top-actions { display: flex; align-items: center; gap: 18px; }
+    .topbar .top-whatsapp { display: inline-flex; align-items: center; gap: 6px; background: #16a34a; color: #fff; font-weight: 800; padding: 6px 12px; border-radius: 999px; font-size: 12px; }
+    .topbar .top-whatsapp:hover { background: #15803d; }
     header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(229,237,243,.9); }
     .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
@@ -135,6 +138,10 @@
       .container { width: min(100% - 30px, 540px); }
       .topbar-inner { justify-content: center; text-align: center; }
       .topbar .top-email { display: none; }
+      .topbar-inner { justify-content: space-between; gap: 8px; font-size: 11px; }
+      .top-actions { gap: 0; flex-shrink: 0; }
+      .topbar .top-whatsapp { font-size: 11px; padding: 6px 9px; }
+      .header-whatsapp { display: none; }
       .nav { min-height: 70px; }
       .brand-name { font-size: 15px; }
       .brand-sub { font-size: 9px; }
@@ -169,7 +176,10 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <span>📍 7 Shiv Colony, Sushilpura, Sodala, Jaipur</span>
-      <a class="top-email" href="mailto:ayankashyap204@gmail.com">✉ ayankashyap204@gmail.com</a>
+      <div class="top-actions">
+        <a class="top-email" href="mailto:ayankashyap204@gmail.com">✉ ayankashyap204@gmail.com</a>
+        <a class="top-whatsapp" href="https://wa.me/918562011204?text=Hello%2C%20I%20am%20interested%20in%20Pro%20Stock%20Market%20Academy.%20Please%20share%20course%20details." target="_blank" rel="noopener">WhatsApp par Chat Karein ↗</a>
+      </div>
     </div>
   </div>
 
@@ -193,7 +203,7 @@
         <a href="#courses">Courses</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#contact">Enquire Now <span>↗</span></a>
+        <a class="btn btn-primary header-whatsapp" href="https://wa.me/918562011204?text=Hello%2C%20I%20am%20interested%20in%20Pro%20Stock%20Market%20Academy.%20Please%20share%20course%20details." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a>
       </nav>
     </div>
   </header>
@@ -206,7 +216,7 @@
           <h1>Understand the market.<br><em>Trade with knowledge.</em></h1>
           <p>Build your understanding of the stock market with structured learning in market basics, technical analysis, price action and risk management. Start your learning journey with Pro Stock Market Academy.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Enquire About Classes <span>↗</span></a>
+            <a class="btn btn-primary" href="https://wa.me/918562011204?text=Hello%2C%20I%20am%20interested%20in%20Pro%20Stock%20Market%20Academy.%20Please%20share%20course%20details." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a>
             <a class="btn btn-light" href="#courses">Explore Courses</a>
           </div>
           <div class="trust-row">
