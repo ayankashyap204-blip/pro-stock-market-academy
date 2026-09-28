@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="Pro Stock Market Academy in Sodala, Jaipur. Learn stock market basics, price action, technical analysis and risk management. Contact us for course details.">
+  <title>Pro Stock Market Academy | Stock Market Classes in Jaipur</title>
+  <style>
+    :root {
+      --navy: #102a43;
+      --navy-2: #183b56;
+      --teal: #14b8a6;
+      --teal-dark: #0f9488;
+      --ink: #172b4d;
+      --muted: #62748a;
+      --paper: #f7fafc;
+      --white: #ffffff;
+      --line: #e5edf3;
+      --shadow: 0 18px 50px rgba(16,42,67,.10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #dce8f1; font-size: 13px; }
+    .topbar-inner { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .topbar a { color: #fff; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(229,237,243,.9); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo {
+      width: 46px; height: 46px; flex: 0 0 46px; display: grid; place-items: center;
+      border-radius: 15px; color: white; background: linear-gradient(135deg, var(--teal), #0b7f89);
+      box-shadow: 0 8px 18px rgba(20,184,166,.22);
+    }
+    .logo svg { width: 27px; height: 27px; }
+    .brand-name { font-weight: 800; font-size: 17px; letter-spacing: -.4px; line-height: 1.15; color: var(--navy); }
+    .brand-sub { font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    .nav-links { display: flex; align-items: center; gap: 27px; font-size: 14px; font-weight: 600; color: #42566b; }
+    .nav-links a:hover { color: var(--teal-dark); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 12px; padding: 13px 19px; font-weight: 750; font-size: 14px; cursor: pointer; transition: transform .18s, box-shadow .18s, background .18s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--teal); color: #062f35; box-shadow: 0 10px 22px rgba(20,184,166,.22); }
+    .btn-primary:hover { background: #2dd4bf; }
+    .btn-light { background: white; color: var(--navy); border: 1px solid var(--line); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; border-radius: 10px; padding: 9px 12px; color: var(--navy); font-size: 20px; }
+    .hero { position: relative; overflow: hidden; padding: 78px 0 70px; background: radial-gradient(circle at 85% 15%, rgba(20,184,166,.14), transparent 30%), linear-gradient(135deg,#f6fbfc 0%,#edf5f9 100%); }
+    .hero:after { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(20,184,166,.15); border-radius: 50%; right: -180px; bottom: -260px; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 58px; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; background: #e1f7f4; color: #087f78; padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .5px; }
+    .eyebrow span { width: 7px; height: 7px; background: var(--teal-dark); border-radius: 50%; }
+    h1 { color: var(--navy); font-size: clamp(38px,5vw,58px); line-height: 1.08; letter-spacing: -2px; margin: 22px 0 20px; }
+    h1 em { color: var(--teal-dark); font-style: normal; }
+    .hero p { color: #5b7084; font-size: 17px; max-width: 560px; margin: 0 0 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; color: #536a7e; font-size: 13px; font-weight: 600; }
+    .trust-row span { display: flex; align-items: center; gap: 7px; }
+    .check { color: var(--teal-dark); font-weight: 900; }
+    .visual-card { background: white; border: 1px solid #e4edf2; border-radius: 26px; padding: 22px; box-shadow: var(--shadow); transform: rotate(1deg); }
+    .visual-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+    .visual-title { font-size: 14px; font-weight: 800; color: var(--navy); }
+    .live-pill { font-size: 11px; color: #087f78; background: #e1f7f4; border-radius: 999px; padding: 5px 9px; font-weight: 800; }
+    .chart { height: 220px; border-radius: 16px; background: linear-gradient(#f8fbfd 1px,transparent 1px),linear-gradient(90deg,#f8fbfd 1px,transparent 1px); background-size: 100% 44px, 50px 100%; position: relative; overflow: hidden; border: 1px solid #eef3f6; }
+    .chart svg { width: 100%; height: 100%; }
+    .chart-note { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; gap: 12px; }
+    .note-label { font-size: 12px; color: var(--muted); }
+    .note-value { font-size: 14px; font-weight: 800; color: var(--navy); }
+    .mini-tag { color: #087f78; background: #e7f8f5; padding: 7px 10px; border-radius: 10px; font-size: 11px; font-weight: 800; }
+    .section { padding: 78px 0; }
+    .section-white { background: white; }
+    .section-head { text-align: center; max-width: 650px; margin: 0 auto 42px; }
+    .section-kicker { color: var(--teal-dark); text-transform: uppercase; letter-spacing: 1.8px; font-size: 12px; font-weight: 850; }
+    h2 { font-size: clamp(28px,3.4vw,39px); line-height: 1.2; color: var(--navy); letter-spacing: -1px; margin: 12px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .card-icon { width: 50px; height: 50px; border-radius: 15px; display: grid; place-items: center; background: #e5f8f5; color: #087f78; margin-bottom: 20px; }
+    .card-icon svg { width: 25px; height: 25px; }
+    .card h3 { color: var(--navy); margin: 0 0 9px; font-size: 19px; }
+    .card p { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+    .text-link { font-size: 14px; font-weight: 800; color: var(--teal-dark); }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 60px; }
+    .about-visual { min-height: 340px; border-radius: 28px; background: linear-gradient(145deg,#12334e,#0e766f); padding: 30px; color: white; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; }
+    .about-visual:after { content: ""; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; position: absolute; right: -80px; top: -70px; box-shadow: 0 0 0 35px rgba(255,255,255,.04),0 0 0 70px rgba(255,255,255,.03); }
+    .about-visual .big-mark { font-size: 60px; font-weight: 900; line-height: 1; color: #6ee7d8; position: relative; z-index: 1; }
+    .about-visual h3 { font-size: 26px; max-width: 250px; line-height: 1.2; position: relative; z-index: 1; }
+    .about-visual p { color: #c5e4e8; font-size: 14px; max-width: 280px; position: relative; z-index: 1; }
+    .about-copy p { color: var(--muted); }
+    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 25px 0 28px; }
+    .feature { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; font-weight: 650; color: #40566b; }
+    .feature .check { background: #e1f7f4; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 7px; flex: 0 0 22px; }
+    .contact-band { background: var(--navy); border-radius: 28px; padding: 42px; color: white; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+    .contact-band h2 { color: white; margin: 0 0 10px; }
+    .contact-band p { color: #c5d4e0; margin: 0; max-width: 570px; }
+    .contact-band .btn { flex-shrink: 0; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; }
+    .contact-info, .contact-form { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
+    .contact-info h3, .contact-form h3 { margin: 0 0 18px; color: var(--navy); font-size: 21px; }
+    .contact-item { display: flex; gap: 14px; margin: 20px 0; align-items: flex-start; }
+    .contact-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; background: #e5f8f5; color: #087f78; flex: 0 0 42px; font-size: 18px; }
+    .contact-item strong { display: block; font-size: 14px; color: var(--navy); }
+    .contact-item span, .contact-item a { font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+    form { display: grid; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { display: block; font-size: 13px; font-weight: 750; color: #40566b; margin-bottom: 6px; }
+    input, select, textarea { width: 100%; padding: 13px 14px; border: 1px solid #dce6ed; border-radius: 11px; font: inherit; font-size: 14px; background: #fbfdfe; color: var(--ink); outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(20,184,166,.12); }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-help { font-size: 12px; color: var(--muted); margin: 0; }
+    .map-link { display: inline-flex; margin-top: 10px; color: var(--teal-dark); font-size: 14px; font-weight: 800; }
+    footer { background: #0b2033; color: #c2d0dc; padding: 32px 0 90px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { color: white; font-weight: 800; }
+    .footer-small { font-size: 12px; color: #91a6b8; margin-top: 5px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; }
+    .disclaimer { font-size: 11px; color: #91a6b8; border-top: 1px solid rgba(255,255,255,.1); margin-top: 25px; padding-top: 18px; }
+    .mobile-cta { display: none; }
+    @media (max-width: 900px) {
+      .nav-links { gap: 15px; }
+      .hero-grid { gap: 30px; }
+      .cards { grid-template-columns: repeat(2,1fr); }
+      .about-grid { gap: 35px; }
+    }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 30px, 540px); }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .topbar .top-email { display: none; }
+      .nav { min-height: 70px; }
+      .brand-name { font-size: 15px; }
+      .brand-sub { font-size: 9px; }
+      .logo { width: 42px; height: 42px; flex-basis: 42px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: white; padding: 18px 22px 22px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; box-shadow: 0 15px 25px rgba(16,42,67,.08); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 0; border-bottom: 1px solid #f0f4f7; }
+      .nav-links .btn { margin-top: 12px; }
+      .hero { padding: 52px 0 48px; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 38px; }
+      h1 { letter-spacing: -1.3px; }
+      .hero p { font-size: 15px; }
+      .visual-card { transform: none; padding: 16px; }
+      .chart { height: 190px; }
+      .section { padding: 58px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .card { padding: 23px; }
+      .about-visual { min-height: 280px; }
+      .feature-list { grid-template-columns: 1fr; }
+      .contact-band { padding: 30px 24px; flex-direction: column; align-items: flex-start; }
+      .contact-info, .contact-form { padding: 23px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .mobile-cta { display: flex; position: fixed; z-index: 30; bottom: 0; left: 0; right: 0; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.97); border-top: 1px solid var(--line); gap: 10px; box-shadow: 0 -8px 25px rgba(16,42,67,.08); }
+      .mobile-cta .btn { flex: 1; padding: 12px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>📍 7 Shiv Colony, Sushilpura, Sodala, Jaipur</span>
+      <a class="top-email" href="mailto:ayankashyap204@gmail.com">✉ ayankashyap204@gmail.com</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Pro Stock Market Academy home">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M5 25V17M12 25V9M19 25V14M26 25V5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M4 13L11 7L18 12L28 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">Pro Stock Market Academy</div>
+          <div class="brand-sub">Learn • Understand • Practice</div>
+        </div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Enquire Now <span>↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span></span> Stock Market Learning • Jaipur</div>
+          <h1>Understand the market.<br><em>Trade with knowledge.</em></h1>
+          <p>Build your understanding of the stock market with structured learning in market basics, technical analysis, price action and risk management. Start your learning journey with Pro Stock Market Academy.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Enquire About Classes <span>↗</span></a>
+            <a class="btn btn-light" href="#courses">Explore Courses</a>
+          </div>
+          <div class="trust-row">
+            <span><b class="check">✓</b> Beginner-friendly learning</span>
+            <span><b class="check">✓</b> Practical chart concepts</span>
+          </div>
+        </div>
+        <div class="visual-card" aria-label="Decorative stock chart illustration">
+          <div class="visual-head">
+            <div class="visual-title">Learn to read the market</div>
+            <div class="live-pill">EDUCATIONAL</div>
+          </div>
+          <div class="chart">
+            <svg viewBox="0 0 520 260" preserveAspectRatio="none" role="img" aria-label="Illustrative candlestick chart">
+              <defs>
+                <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#14b8a6" stop-opacity=".20"/>
+                  <stop offset="100%" stop-color="#14b8a6" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 215 C45 205 55 170 95 183 S150 130 190 150 S245 95 285 115 S345 75 380 90 S450 35 520 45 L520 260 L0 260Z" fill="url(#area)"/>
+              <path d="M0 215 C45 205 55 170 95 183 S150 130 190 150 S245 95 285 115 S345 75 380 90 S450 35 520 45" fill="none" stroke="#0f9488" stroke-width="4" stroke-linecap="round"/>
+              <g stroke-linecap="round" stroke-width="3">
+                <path d="M55 120V190M45 145H65V170H45Z" stroke="#14b8a6" fill="#14b8a6"/>
+                <path d="M115 105V165M105 120H125V150H105Z" stroke="#ef8354" fill="#ef8354"/>
+                <path d="M175 95V155M165 110H185V130H165Z" stroke="#14b8a6" fill="#14b8a6"/>
+                <path d="M235 65V130M225 85H245V115H225Z" stroke="#14b8a6" fill="#14b8a6"/>
+                <path d="M295 80V145M285 100H305V125H285Z" stroke="#ef8354" fill="#ef8354"/>
+                <path d="M355 45V110M345 60H365V95H345Z" stroke="#14b8a6" fill="#14b8a6"/>
+                <path d="M415 25V90M405 40H425V70H405Z" stroke="#14b8a6" fill="#14b8a6"/>
+                <path d="M475 15V80M465 30H485V60H465Z" stroke="#14b8a6" fill="#14b8a6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="chart-note">
+            <div><div class="note-label">Focus on learning</div><div class="note-value">Concepts • Charts • Risk</div></div>
+            <div class="mini-tag">Learn step by step</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Our learning areas</div>
+          <h2>Build your market knowledge</h2>
+          <p>Explore key topics that help you understand how markets move. Contact the academy for the current course syllabus, schedule and fees.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5M4 19H21"/><path d="M7 15l4-4 3 2 6-7"/></svg></div>
+            <h3>Stock Market Basics</h3>
+            <p>Understand market fundamentals, exchanges, order types, charts and essential trading terminology.</p>
+            <a class="text-link course-link" data-course="Stock Market Basics" href="#contact">Ask about this course →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18h18M5 15l4-5 3 3 7-8"/><path d="M15 5h4v4"/></svg></div>
+            <h3>Technical Analysis</h3>
+            <p>Learn chart structure, trends, support and resistance, candlestick behaviour and common patterns.</p>
+            <a class="text-link course-link" data-course="Technical Analysis" href="#contact">Ask about this course →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8h14M5 16h14"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <h3>Price Action & Market Behaviour</h3>
+            <p>Explore price movement, breakout and retest concepts, liquidity and market behaviour through chart examples.</p>
+            <a class="text-link course-link" data-course="Price Action & Market Behaviour" href="#contact">Ask about this course →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M8.5 12l2.2 2.2 4.8-5"/></svg></div>
+            <h3>Risk Management</h3>
+            <p>Understand position sizing, stop-loss concepts, risk-reward and the importance of managing risk.</p>
+            <a class="text-link course-link" data-course="Risk Management" href="#contact">Ask about this course →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+            <h3>Trading Psychology</h3>
+            <p>Learn about discipline, emotional decisions, patience and developing a structured learning process.</p>
+            <a class="text-link course-link" data-course="Trading Psychology" href="#contact">Ask about this course →</a>
+          </article>
+          <article class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4M8 10l3 3 5-5"/></svg></div>
+            <h3>Practical Chart Learning</h3>
+            <p>Discuss chart examples and learn how to observe price behaviour with a methodical approach.</p>
+            <a class="text-link course-link" data-course="Practical Chart Learning" href="#contact">Ask about this course →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div class="big-mark">PSMA</div>
+          <div>
+            <h3>Learn the concepts. Build your own understanding.</h3>
+            <p>Trading education designed to make market concepts easier to approach, one step at a time.</p>
+          </div>
+        </div>
+        <div class="about-copy">
+          <div class="section-kicker">About the academy</div>
+          <h2>A clear, structured approach to learning trading</h2>
+          <p>Pro Stock Market Academy aims to make market education approachable for learners at different stages. Explore the basics, understand chart concepts and develop awareness of risk before making independent market decisions.</p>
+          <div class="feature-list">
+            <div class="feature"><span class="check">✓</span><span>Beginner-friendly explanations</span></div>
+            <div class="feature"><span class="check">✓</span><span>Chart-based concepts</span></div>
+            <div class="feature"><span class="check">✓</span><span>Focus on risk awareness</span></div>
+            <div class="feature"><span class="check">✓</span><span>Local academy in Jaipur</span></div>
+          </div>
+          <a class="btn btn-primary" href="#contact">Talk to the Academy <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div class="contact-band">
+          <div>
+            <div class="section-kicker" style="color:#6ee7d8">Ready to get started?</div>
+            <h2>Have questions about classes?</h2>
+            <p>Get in touch to ask about available courses, learning format, fees and upcoming class schedules.</p>
+          </div>
+          <a class="btn btn-primary" href="#contact">Contact the Academy <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Get in touch</div>
+          <h2>Let's talk about your learning goals</h2>
+          <p>Send an enquiry or contact the academy directly for course details and class information.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Contact information</h3>
+            <div class="contact-item">
+              <div class="contact-icon">☎</div>
+              <div><strong>Call us</strong><a href="tel:+918562011204">+91 85620 11204</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉</div>
+              <div><strong>Email</strong><a href="mailto:ayankashyap204@gmail.com">ayankashyap204@gmail.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">⌖</div>
+              <div><strong>Academy address</strong><span>7 Shiv Colony, Sushilpura, Sodala, Jaipur, Rajasthan, India</span><br>
+                <a class="map-link" href="https://maps.app.goo.gl/wSewmxjA6Zdvjgba6" target="_blank" rel="noopener">Get directions on Google Maps ↗</a>
+              </div>
+            </div>
+            <a class="btn btn-primary" style="width:100%;margin-top:10px" href="https://wa.me/918562011204?text=Hello%2C%20I%20am%20interested%20in%20Pro%20Stock%20Market%20Academy.%20Please%20share%20course%20details." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a>
+          </div>
+          <div class="contact-form">
+            <h3>Send an enquiry</h3>
+            <form id="enquiryForm">
+              <div class="form-row">
+                <div><label for="name">Your name</label><input id="name" name="name" placeholder="Enter your name" required></div>
+                <div><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" placeholder="Your mobile number" required></div>
+              </div>
+              <div>
+                <label for="course">Interested in</label>
+                <select id="course" name="course" required>
+                  <option value="">Select a course</option>
+                  <option>Stock Market Basics</option>
+                  <option>Technical Analysis</option>
+                  <option>Price Action & Market Behaviour</option>
+                  <option>Risk Management</option>
+                  <option>Trading Psychology</option>
+                  <option>Practical Chart Learning</option>
+                  <option>Not sure yet / Need guidance</option>
+                </select>
+              </div>
+              <div><label for="message">Message (optional)</label><textarea id="message" name="message" placeholder="What would you like to learn?"></textarea></div>
+              <button class="btn btn-primary" type="submit">Send Enquiry on WhatsApp <span>↗</span></button>
+              <p class="form-help">Your enquiry will open in WhatsApp so you can review and send it to the academy.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">Pro Stock Market Academy</div>
+          <div class="footer-small">Stock market education • Sodala, Jaipur</div>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a><a href="#courses">Courses</a><a href="#about">About</a><a href="#contact">Contact</a>
+          <a href="mailto:ayankashyap204@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="disclaimer">Educational content only. Stock market and other financial market activities involve risk, including possible loss of capital. No profits or investment returns are guaranteed. This academy website is for educational enquiries and does not provide personalized investment advice or guarantee trading results.</div>
+      <div class="footer-small" style="margin-top:18px">© <span id="year"></span> Pro Stock Market Academy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-light" href="tel:+918562011204">☎ Call</a>
+    <a class="btn btn-primary" href="https://wa.me/918562011204?text=Hello%2C%20I%20want%20to%20know%20about%20your%20trading%20classes." target="_blank" rel="noopener">WhatsApp ↗</a>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    document.querySelectorAll('.course-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const course = link.dataset.course;
+        document.getElementById('course').value = course;
+      });
+    });
+
+    document.getElementById('enquiryForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const course = document.getElementById('course').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !phone || !course) {
+        alert('Please fill in your name, phone number and course of interest.');
+        return;
+      }
+
+      const text = `Hello, I would like to enquire about Pro Stock Market Academy.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ACourse: ${encodeURIComponent(course)}%0AMessage: ${encodeURIComponent(message || 'Please share course details, fees and timings.')}`;
+      window.open(`https://wa.me/918562011204?text=${text}`, '_blank', 'noopener');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
