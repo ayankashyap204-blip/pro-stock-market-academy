@@ -60,6 +60,20 @@
     .hero:after { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(20,184,166,.15); border-radius: 50%; right: -180px; bottom: -260px; }
     .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 58px; position: relative; z-index: 1; }
     .eyebrow { display: inline-flex; align-items: center; gap: 9px; background: #e1f7f4; color: #087f78; padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .5px; }
+
+    .offline-hindi {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 13px;
+      padding: 9px 15px;
+      border-radius: 10px;
+      background: #102a43;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 850;
+      line-height: 1.35;
+      box-shadow: 0 8px 18px rgba(16,42,67,.12);
+    }
     .eyebrow span { width: 7px; height: 7px; background: var(--teal-dark); border-radius: 50%; }
     h1 { color: var(--navy); font-size: clamp(38px,5vw,58px); line-height: 1.08; letter-spacing: -2px; margin: 22px 0 20px; }
     h1 em { color: var(--teal-dark); font-style: normal; }
@@ -127,6 +141,57 @@
     .footer-small { font-size: 12px; color: #91a6b8; margin-top: 5px; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; }
     .disclaimer { font-size: 11px; color: #91a6b8; border-top: 1px solid rgba(255,255,255,.1); margin-top: 25px; padding-top: 18px; }
+
+    .liquidity-section { padding-top: 45px; }
+    .liquidity-banner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      padding: 48px;
+      background: linear-gradient(135deg, #102a43 0%, #123d55 55%, #0e766f 100%);
+      box-shadow: 0 24px 60px rgba(16,42,67,.18);
+      color: white;
+    }
+    .liquidity-banner:before {
+      content: "LIQUIDITY";
+      position: absolute;
+      right: -30px;
+      top: 10px;
+      font-size: clamp(70px, 13vw, 170px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -7px;
+      color: rgba(110,231,216,.07);
+      pointer-events: none;
+    }
+    .liquidity-content { position: relative; z-index: 1; max-width: 900px; }
+    .liquidity-word {
+      margin: 5px 0 4px;
+      font-size: clamp(48px, 9vw, 104px);
+      line-height: .95;
+      letter-spacing: -5px;
+      font-weight: 950;
+      color: #6ee7d8;
+    }
+    .liquidity-banner h2 { color: white; margin: 8px 0 14px; max-width: 760px; }
+    .liquidity-banner p { color: #c9e3e6; font-size: 17px; max-width: 780px; margin: 0 0 22px; }
+    .liquidity-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 0 0 28px;
+      color: #e4f7f5;
+      font-size: 14px;
+      font-weight: 750;
+    }
+    .liquidity-points span { display: inline-flex; align-items: center; gap: 7px; }
+    .liquidity-points span::first-letter { color: #6ee7d8; }
+    @media (max-width: 720px) {
+      .liquidity-banner { padding: 32px 23px; border-radius: 24px; }
+      .liquidity-word { letter-spacing: -3px; font-size: clamp(45px, 16vw, 78px); }
+      .liquidity-banner p { font-size: 15px; }
+      .liquidity-banner:before { font-size: 70px; right: -20px; top: 35px; }
+    }
     .mobile-cta { display: none; }
     @media (max-width: 900px) {
       .nav-links { gap: 15px; }
@@ -151,6 +216,11 @@
       .nav-links.open { display: flex; }
       .nav-links a { padding: 12px 0; border-bottom: 1px solid #f0f4f7; }
       .nav-links .btn { margin-top: 12px; }
+
+      .offline-hindi {
+        font-size: 15px;
+        padding: 8px 11px;
+      }
       .hero { padding: 52px 0 48px; }
       .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
       .hero-grid { gap: 38px; }
@@ -200,7 +270,7 @@
       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <nav class="nav-links" id="navLinks">
         <a href="#home">Home</a>
-        <a href="#courses">Courses</a>
+        <a href="#liquidity">Liquidity Strategy</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a class="btn btn-primary header-whatsapp" href="https://wa.me/918562011204?text=Hello%2C%20I%20am%20interested%20in%20Pro%20Stock%20Market%20Academy.%20Please%20share%20course%20details." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a>
@@ -213,21 +283,22 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow"><span></span> Stock Market Learning • Jaipur</div>
-          <h1>Understand the market.<br><em>Trade with knowledge.</em></h1>
-          <p>Build your understanding of the stock market with structured learning in market basics, technical analysis, price action and risk management. Start your learning journey with Pro Stock Market Academy.</p>
+          <div class="offline-hindi">सोडाला में ऑफलाइन ट्रेडिंग सीखने के लिए संपर्क करें</div>
+          <h1>Learn Trading<br><em>with LIQUIDITY.</em></h1>
+          <p><strong>Learn trading offline in Sodala, Jaipur.</strong> We teach you how to understand <strong>LIQUIDITY</strong>, liquidity strategy, price action and market behaviour with practical chart-based learning. Contact us to start your trading learning journey.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/918562011204?text=Hello%2C%20I%20am%20interested%20in%20Pro%20Stock%20Market%20Academy.%20Please%20share%20course%20details." target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a>
-            <a class="btn btn-light" href="#courses">Explore Courses</a>
+            <a class="btn btn-light" href="#liquidity">Learn Liquidity Strategy</a>
           </div>
           <div class="trust-row">
-            <span><b class="check">✓</b> Beginner-friendly learning</span>
-            <span><b class="check">✓</b> Practical chart concepts</span>
+            <span><b class="check">✓</b> Offline learning in Sodala</span>
+            <span><b class="check">✓</b> Liquidity-based strategy</span>
           </div>
         </div>
         <div class="visual-card" aria-label="Decorative stock chart illustration">
           <div class="visual-head">
-            <div class="visual-title">Learn to read the market</div>
-            <div class="live-pill">EDUCATIONAL</div>
+            <div class="visual-title">LIQUIDITY • MARKET STRUCTURE</div>
+            <div class="live-pill">LIQUIDITY</div>
           </div>
           <div class="chart">
             <svg viewBox="0 0 520 260" preserveAspectRatio="none" role="img" aria-label="Illustrative candlestick chart">
@@ -252,8 +323,35 @@
             </svg>
           </div>
           <div class="chart-note">
-            <div><div class="note-label">Focus on learning</div><div class="note-value">Concepts • Charts • Risk</div></div>
-            <div class="mini-tag">Learn step by step</div>
+            <div><div class="note-label">Focus on learning</div><div class="note-value">Liquidity • Strategy • Price Action</div></div>
+            <div class="mini-tag">Learn Liquidity</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section liquidity-section" id="liquidity">
+      <div class="container">
+        <div class="liquidity-banner">
+          <div class="liquidity-content">
+            <div class="section-kicker" style="color:#6ee7d8">Our Core Approach</div>
+            <div class="liquidity-word">LIQUIDITY</div>
+            <h2>We teach trading through Liquidity Strategy</h2>
+            <p>
+              Learn how to observe liquidity, market structure and price behaviour on real charts.
+              Our offline trading classes in Sodala, Jaipur focus on understanding liquidity concepts
+              and applying a structured liquidity strategy step by step.
+            </p>
+            <div class="liquidity-points">
+              <span>✓ Liquidity Concepts</span>
+              <span>✓ Liquidity Strategy</span>
+              <span>✓ Market Structure</span>
+              <span>✓ Practical Chart Learning</span>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/918562011204?text=Hello%2C%20I%20want%20to%20learn%20trading%20offline%20in%20Sodala%20with%20your%20Liquidity%20Strategy%20course." target="_blank" rel="noopener">
+              Contact for Offline Trading Classes <span>↗</span>
+            </a>
           </div>
         </div>
       </div>
@@ -281,9 +379,9 @@
           </article>
           <article class="card">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8h14M5 16h14"/><circle cx="12" cy="12" r="9"/></svg></div>
-            <h3>Price Action & Market Behaviour</h3>
-            <p>Explore price movement, breakout and retest concepts, liquidity and market behaviour through chart examples.</p>
-            <a class="text-link course-link" data-course="Price Action & Market Behaviour" href="#contact">Ask about this course →</a>
+            <h3>Liquidity Strategy</h3>
+            <p>Learn liquidity concepts, liquidity zones, market structure and price behaviour through practical chart examples.</p>
+            <a class="text-link course-link" data-course="Liquidity Strategy" href="#contact">Ask about this course →</a>
           </article>
           <article class="card">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M8.5 12l2.2 2.2 4.8-5"/></svg></div>
@@ -318,13 +416,13 @@
         </div>
         <div class="about-copy">
           <div class="section-kicker">About the academy</div>
-          <h2>A clear, structured approach to learning trading</h2>
-          <p>Pro Stock Market Academy aims to make market education approachable for learners at different stages. Explore the basics, understand chart concepts and develop awareness of risk before making independent market decisions.</p>
+          <h2>Learn trading with a liquidity-first approach</h2>
+          <p>Pro Stock Market Academy provides offline trading education in Sodala, Jaipur. The learning approach focuses strongly on <strong>LIQUIDITY</strong>, liquidity strategy, market structure and practical chart reading so learners can build their own understanding before making independent market decisions.</p>
           <div class="feature-list">
             <div class="feature"><span class="check">✓</span><span>Beginner-friendly explanations</span></div>
-            <div class="feature"><span class="check">✓</span><span>Chart-based concepts</span></div>
+            <div class="feature"><span class="check">✓</span><span>Liquidity-based concepts</span></div>
             <div class="feature"><span class="check">✓</span><span>Focus on risk awareness</span></div>
-            <div class="feature"><span class="check">✓</span><span>Local academy in Jaipur</span></div>
+            <div class="feature"><span class="check">✓</span><span>Offline classes in Sodala</span></div>
           </div>
           <a class="btn btn-primary" href="#contact">Talk to the Academy <span>↗</span></a>
         </div>
@@ -336,8 +434,8 @@
         <div class="contact-band">
           <div>
             <div class="section-kicker" style="color:#6ee7d8">Ready to get started?</div>
-            <h2>Have questions about classes?</h2>
-            <p>Get in touch to ask about available courses, learning format, fees and upcoming class schedules.</p>
+            <h2>Want to learn trading offline in Sodala?</h2>
+            <p>Contact us in Sodala, Jaipur to learn trading through Liquidity Strategy, market structure and practical chart learning. Ask about fees and upcoming class schedules.</p>
           </div>
           <a class="btn btn-primary" href="#contact">Contact the Academy <span>↗</span></a>
         </div>
@@ -348,8 +446,8 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Get in touch</div>
-          <h2>Let's talk about your learning goals</h2>
-          <p>Send an enquiry or contact the academy directly for course details and class information.</p>
+          <h2>Contact us for Offline Trading Classes in Sodala</h2>
+          <p>Interested in learning trading offline? Contact the academy for Liquidity Strategy course details, fees and class information.</p>
         </div>
         <div class="contact-grid">
           <div class="contact-info">
@@ -405,7 +503,7 @@
       <div class="footer-inner">
         <div>
           <div class="footer-brand">Pro Stock Market Academy</div>
-          <div class="footer-small">Stock market education • Sodala, Jaipur</div>
+          <div class="footer-small">Offline trading education • Liquidity Strategy • Sodala, Jaipur</div>
         </div>
         <div class="footer-links">
           <a href="#home">Home</a><a href="#courses">Courses</a><a href="#about">About</a><a href="#contact">Contact</a>
